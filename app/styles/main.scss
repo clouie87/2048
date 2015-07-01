@@ -79,27 +79,21 @@ $tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
           }
         }
 
-//        @for $i from 1 through length($colors){
-//          &.tile-#{power(2, $i)} .tile-inner {
-//            background: nth($colors, $i);
-//          }
-//        }
+
       }
     }
   }
 
-//  .tile-2{
-//    @for $i from 1 through length($colors){
-//      &.tile-#{power(2,$i)} .tile-inner {
-//        background: nth($colors, $i);
-//      }
-//    }
-//  }
+
 
 .box {
   width:40px;
   height:40px;
   background-color: blue;
+}
+.box.transformed {
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

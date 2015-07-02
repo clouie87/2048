@@ -8,6 +8,7 @@ angular.module('Game', ['Grid', 'ngCookies'])
     this.newGame = function() {
       GridService.buildEmptyGameBoard();
       GridService.buildStartingPosition();
+
       this.reinit();
     };
 
@@ -47,7 +48,7 @@ angular.module('Game', ['Grid', 'ngCookies'])
             //For every position
             var originalPosition = {x: x, y: y};
             var tile = GridService.getCellAt(originalPosition);
-            console.log(tile);
+            //console.log("the tile is at: ", originalPosition);
             if (tile) {
               //if we have a tile here
               var cell = GridService.calculateNextPosition(tile, key),

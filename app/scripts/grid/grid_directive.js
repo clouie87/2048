@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('Grid')
   .directive('grid', function() {
     return {

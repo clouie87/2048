@@ -7,11 +7,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 $width: 400px;
 $tile-count: 4;         // The number of tiles per row/column
-$tile-padding: 10px;
+$tile-padding: 15px;
 $tile-radius: 3px;
 
-$game-background: #bbada0;
-$game-container-background: #bbada0;
+//$game-background: #bbada0;
+//$game-container-background: #bbada0;
 $colors:  #EEE4DA, // 2
           #EAE0C8, // 4
           #F59563, // 8
@@ -39,32 +39,32 @@ $colors:  #EEE4DA, // 2
       position: absolute; // the grid is absolutely positioned
       z-index: 1; // IMPORTANT to set the z-index for layering
       margin: 0 auto; // center
-      border: 1px solid black;
+      width: $width;
+      height: $width;
+
 
       .grid-cell {
         width: $tile-size; // set the cell width
         height: $tile-size; // set the cell height
         margin-bottom: $tile-padding; // the padding between lower cells
         margin-right: $tile-padding; // the padding between the right cell
-        background: rgba(238, 228, 218, 0.35);
-        //      border: 1px solid black;
-        // ...
+
       }
     }
     .tile-container {
       position: absolute;
       z-index: 2;
-      width: $width;
       height: $width;
+      width: $width;
 
 
       .tile {
         width: $tile-size; // tile width
-        height: $tile-size; // tile height
-        font-size: 40px;
+//        height: $tile-size; // tile height
+//        font-size: 40px;
         color: white;
         text-align: center;
-//        position: ($tile-size)/2;
+
         line-height: $tile-size;
 //        @include border-radius($tile-radius);
 //        border: 1px solid blue;
@@ -94,92 +94,3 @@ $colors:  #EEE4DA, // 2
       }
     }
   }
-//}
-
-
-
-.box {
-  width:40px;
-  height:40px;
-  background-color: blue;
-}
-//.box.transformed {
-//  -webkit-transform: translateX(300px);
-//  transform: translateX(300px);
-//}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}

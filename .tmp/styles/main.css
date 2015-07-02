@@ -8713,248 +8713,153 @@ button.close {
   position: absolute;
   z-index: 1;
   margin: 0 auto;
-  border: 1px solid black;
-}
-/* line 44, ../../app/styles/main.scss */
-#game .grid-container .grid-cell {
-  width: 87.5px;
-  height: 87.5px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  background: rgba(238, 228, 218, 0.35);
-}
-/* line 54, ../../app/styles/main.scss */
-#game .tile-container {
-  position: absolute;
-  z-index: 2;
   width: 400px;
   height: 400px;
 }
-/* line 61, ../../app/styles/main.scss */
+/* line 46, ../../app/styles/main.scss */
+#game .grid-container .grid-cell {
+  width: 81.25px;
+  height: 81.25px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+/* line 56, ../../app/styles/main.scss */
+#game .tile-container {
+  position: absolute;
+  z-index: 2;
+  height: 400px;
+  width: 400px;
+}
+/* line 63, ../../app/styles/main.scss */
 #game .tile-container .tile {
-  width: 87.5px;
-  height: 87.5px;
-  font-size: 40px;
+  width: 81.25px;
   color: white;
   text-align: center;
-  line-height: 87.5px;
+  line-height: 81.25px;
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-0 {
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-1 {
-  -webkit-transform: translate(0px, 97.5px);
-  transform: translate(0px, 97.5px);
+  -webkit-transform: translate(0px, 96.25px);
+  transform: translate(0px, 96.25px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-2 {
-  -webkit-transform: translate(0px, 195px);
-  transform: translate(0px, 195px);
+  -webkit-transform: translate(0px, 192.5px);
+  transform: translate(0px, 192.5px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-3 {
-  -webkit-transform: translate(0px, 292.5px);
-  transform: translate(0px, 292.5px);
+  -webkit-transform: translate(0px, 288.75px);
+  transform: translate(0px, 288.75px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-0 {
-  -webkit-transform: translate(97.5px, 0px);
-  transform: translate(97.5px, 0px);
+  -webkit-transform: translate(96.25px, 0px);
+  transform: translate(96.25px, 0px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-1 {
-  -webkit-transform: translate(97.5px, 97.5px);
-  transform: translate(97.5px, 97.5px);
+  -webkit-transform: translate(96.25px, 96.25px);
+  transform: translate(96.25px, 96.25px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-2 {
-  -webkit-transform: translate(97.5px, 195px);
-  transform: translate(97.5px, 195px);
+  -webkit-transform: translate(96.25px, 192.5px);
+  transform: translate(96.25px, 192.5px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-3 {
-  -webkit-transform: translate(97.5px, 292.5px);
-  transform: translate(97.5px, 292.5px);
+  -webkit-transform: translate(96.25px, 288.75px);
+  transform: translate(96.25px, 288.75px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-0 {
-  -webkit-transform: translate(195px, 0px);
-  transform: translate(195px, 0px);
+  -webkit-transform: translate(192.5px, 0px);
+  transform: translate(192.5px, 0px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-1 {
-  -webkit-transform: translate(195px, 97.5px);
-  transform: translate(195px, 97.5px);
+  -webkit-transform: translate(192.5px, 96.25px);
+  transform: translate(192.5px, 96.25px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-2 {
-  -webkit-transform: translate(195px, 195px);
-  transform: translate(195px, 195px);
+  -webkit-transform: translate(192.5px, 192.5px);
+  transform: translate(192.5px, 192.5px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-3 {
-  -webkit-transform: translate(195px, 292.5px);
-  transform: translate(195px, 292.5px);
+  -webkit-transform: translate(192.5px, 288.75px);
+  transform: translate(192.5px, 288.75px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-0 {
-  -webkit-transform: translate(292.5px, 0px);
-  transform: translate(292.5px, 0px);
+  -webkit-transform: translate(288.75px, 0px);
+  transform: translate(288.75px, 0px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-1 {
-  -webkit-transform: translate(292.5px, 97.5px);
-  transform: translate(292.5px, 97.5px);
+  -webkit-transform: translate(288.75px, 96.25px);
+  transform: translate(288.75px, 96.25px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-2 {
-  -webkit-transform: translate(292.5px, 195px);
-  transform: translate(292.5px, 195px);
+  -webkit-transform: translate(288.75px, 192.5px);
+  transform: translate(288.75px, 192.5px);
 }
-/* line 81, ../../app/styles/main.scss */
+/* line 83, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-3 {
-  -webkit-transform: translate(292.5px, 292.5px);
-  transform: translate(292.5px, 292.5px);
+  -webkit-transform: translate(288.75px, 288.75px);
+  transform: translate(288.75px, 288.75px);
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-2 .tile-inner {
   background: #EEE4DA;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-4 .tile-inner {
   background: #EAE0C8;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-8 .tile-inner {
   background: #F59563;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-16 .tile-inner {
   background: #3399ff;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-32 .tile-inner {
   background: #ffa333;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-64 .tile-inner {
   background: #cef030;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-128 .tile-inner {
   background: #E8D8CE;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-256 .tile-inner {
   background: #990303;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-512 .tile-inner {
   background: #6BA5DE;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-1024 .tile-inner {
   background: #DCAD60;
 }
-/* line 89, ../../app/styles/main.scss */
+/* line 91, ../../app/styles/main.scss */
 #game .tile-container .tile.tile-2048 .tile-inner {
   background: #B60022;
 }
 
-/* line 101, ../../app/styles/main.scss */
-.box {
-  width: 40px;
-  height: 40px;
-  background-color: blue;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-/* line 112, ../../app/styles/main.scss */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-/* line 120, ../../app/styles/main.scss */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-  /* Make the masthead heading the same height as the navigation */
-}
-/* line 125, ../../app/styles/main.scss */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-/* line 134, ../../app/styles/main.scss */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-/* line 140, ../../app/styles/main.scss */
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-/* line 145, ../../app/styles/main.scss */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-/* line 149, ../../app/styles/main.scss */
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-/* line 156, ../../app/styles/main.scss */
-.marketing {
-  margin: 40px 0;
-}
-/* line 159, ../../app/styles/main.scss */
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* line 166, ../../app/styles/main.scss */
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  /* line 171, ../../app/styles/main.scss */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  /* line 178, ../../app/styles/main.scss */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 182, ../../app/styles/main.scss */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+/*# sourceMappingURL=main.css.map */

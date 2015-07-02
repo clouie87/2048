@@ -1,11 +1,37 @@
 angular.module('Grid', [])
   .factory('TileModel', function() {
+
     var Tile = function (pos, val) {
       this.x = pos.x;
       this.y = pos.y;
-      this.value = val || 2;
+      this.value = val || 4;
+
+      this.merged = null;
+
+      this.reset = function() {
+        this.merged = null;
+      };
+
+      this.newPosition = function(newPosition) {
+        this.x = newPosition.x;
+        this.y = newPosition.y;
+      };
+
+      //this.updatePosition = function(newPosition) {
+      //  this.x = newPosition.x;
+      //  this.y = newPosition.y;
+      //};
+
+      this.getPosition = function() {
+        return {
+          x: this.x,
+          y: this.y
+        };
+      };
+
+
+      // ...
     };
-    this.merged = null;
 
     Tile.prototype.updatePosition = function(newPos) {
       this.x = newPos.x;
@@ -22,7 +48,7 @@ angular.module('Grid', [])
     this.grid   = [];
     this.tiles  = [];
     this.tiles.push(new TileModel({x: 1, y: 1}, 2));
-    this.tiles.push(new TileModel({x: 1, y: 2}, 2));
+    this.tiles.push(new TileModel({x: 1, y: 2}, 4));
     // Size of the board
     this.size   = 4;
     this.startingTileNumber = 2;
@@ -41,8 +67,9 @@ angular.module('Grid', [])
       var self = this;
       console.log('creating empty board');
         // Initialize our grid
-      for (var x = 0; x < service.size * service.size; x++) {
+      for (var x = 0; x < 4 * 4; x++) {
         this.grid[x] = null;
+        //console.log(this);
       }
 
       // Initialize our tile array
@@ -55,6 +82,7 @@ angular.module('Grid', [])
     this.prepareTiles = function() {
       this.forEach(function(x,y,tile) {
         if (tile) {
+          //tile.savePosition();
           tile.reset();
         }
       });
@@ -184,6 +212,10 @@ angular.module('Grid', [])
         return cells;
       };
 
+
+    this.samePositions = function(a, b) {
+      return a.x === b.x && a.y === b.y;
+    };
 
     this.randomlyInsertNewTile = function() {
       var cell = this.randomAvailableCell(),

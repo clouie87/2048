@@ -3,65 +3,71 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "_functions";
+
 $width: 400px;
 $tile-count: 4;         // The number of tiles per row/column
-$tile-padding: 15px;
+$tile-padding: 10px;
+$tile-radius: 3px;
 
 $game-background: #bbada0;
-
+$game-container-background: #bbada0;
 $colors:  #EEE4DA, // 2
-#EAE0C8, // 4
-#F59563, // 8
-#3399ff, // 16
-#ffa333, // 32
-#cef030, // 64
-#E8D8CE, // 128
-#990303, // 256
-#6BA5DE, // 512
-#DCAD60, // 1024
-#B60022; // 2048
+          #EAE0C8, // 4
+          #F59563, // 8
+          #3399ff, // 16
+          #ffa333, // 32
+          #cef030, // 64
+          #E8D8CE, // 128
+          #990303, // 256
+          #6BA5DE, // 512
+          #DCAD60, // 1024
+          #B60022; // 2048
 
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
+//@mixin game-board($tile-count: 4) {
+  $tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
+  #game {
+    position: relative;
+    width: $width;
+    height: $width; // The gameboard is a square
+    background-color: #bbada0;
+    border-radius: 6px;
 
 
-body {
-  padding: 0;
-}
+    .grid-container {
+      position: absolute; // the grid is absolutely positioned
+      z-index: 1; // IMPORTANT to set the z-index for layering
+      margin: 0 auto; // center
+      border: 1px solid black;
 
-$tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
-#game {
-  position: relative;
-  border: 1px solid black;
-  width: $width;
-  height: $width; // The gameboard is a square
-  background-color: #00b3ee;
-  .grid-container {
-    position: absolute; // the grid is absolutely positioned
-    z-index: 1; // IMPORTANT to set the z-index for layering
-    margin: 0 auto; // center
-
-    .grid-cell {
-      width: $tile-size; // set the cell width
-      height: $tile-size; // set the cell height
-      margin-bottom: $tile-padding; // the padding between lower cells
-      margin-right: $tile-padding; // the padding between the right cell
-      // ...
+      .grid-cell {
+        width: $tile-size; // set the cell width
+        height: $tile-size; // set the cell height
+        margin-bottom: $tile-padding; // the padding between lower cells
+        margin-right: $tile-padding; // the padding between the right cell
+        background: rgba(238, 228, 218, 0.35);
+        //      border: 1px solid black;
+        // ...
+      }
     }
-  }
-  .tile-container {
-    position: absolute;
-    z-index: 2;
+    .tile-container {
+      position: absolute;
+      z-index: 2;
+      width: $width;
+      height: $width;
 
-    .tile {
-      width: $tile-size; // tile width
-      height: $tile-size; // tile height
-      border: 1px solid blue;
+
+      .tile {
+        width: $tile-size; // tile width
+        height: $tile-size; // tile height
+        font-size: 40px;
+        color: white;
+        text-align: center;
+//        position: ($tile-size)/2;
+        line-height: $tile-size;
+//        @include border-radius($tile-radius);
+//        border: 1px solid blue;
 
         // Dynamically create .position-#{x}-#{y} classes to mark
         // where each tile will be placed
@@ -79,10 +85,16 @@ $tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
           }
         }
 
+        @for $i from 1 through length($colors) {
+          &.tile-#{power(2, $i)} .tile-inner {
+            background: nth($colors, $i)
+          }
+        }
 
       }
     }
   }
+//}
 
 
 
@@ -91,10 +103,10 @@ $tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
   height:40px;
   background-color: blue;
 }
-.box.transformed {
-  -webkit-transform: translateX(300px);
-  transform: translateX(300px);
-}
+//.box.transformed {
+//  -webkit-transform: translateX(300px);
+//  transform: translateX(300px);
+//}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

@@ -10,29 +10,45 @@ angular.module('Grid', [])
 
       this.merged = null;
 
-      this.reset = function() {
-        this.merged = null;
-      };
-
-      this.newPosition = function(newPosition) {
-        this.x = newPosition.x;
-        this.y = newPosition.y;
-      };
-
-      this.getPosition = function() {
-        return {
-          x: this.x,
-          y: this.y
-        };
-      };
-
-
     };
 
-    Tile.prototype.updatePosition = function(newPos) {
-      console.log("The upadatedPosition is: ", newPos.x, newPos.y);
-      this.x = newPos.x;
-      this.y = newPos.y;
+
+    Tile.prototype.savePosition = function() {
+      this.originalX = this.x;
+      this.originalY = this.y;
+    };
+
+    Tile.prototype.reset = function() {
+      this.merged = null;
+    };
+
+    Tile.prototype.setMergedBy = function(arr) {
+      var self = this;
+      arr.forEach(function(tile) {
+        tile.merged = true;
+        tile.updatePosition(self.getPosition());
+      });
+    };
+
+    Tile.prototype.updateValue = function(newVal) {
+      this.value = newVal;
+    };
+
+    Tile.prototype.updatePosition = function(newPosition) {
+      this.x = newPosition.x;
+      this.y = newPosition.y;
+    };
+
+    Tile.prototype.getPosition = function() {
+      return {
+        x: this.x,
+        y: this.y
+      };
+    };
+    Tile.prototype.updatePosition = function(newPosition) {
+      console.log("The upadatedPosition is: ", newPosition.x, newPosition.y);
+      this.x = newPosition.x;
+      this.y = newPosition.y;
     };
 
     return Tile;
@@ -86,6 +102,28 @@ angular.module('Grid', [])
         this.randomlyInsertNewTile();
       }
     };
+
+    this.tileMatchesAvailable = function() {
+      var totalSize = service.size * service.size;
+      for (var i = 0; i < totalSize; i++) {
+        var pos = this._positionToCoordinates(i);
+        var tile = this.tiles[i];
+
+        if (tile) {
+          // Check all vectors
+          for (var vectorName in vectors) {
+            var vector = vectors[vectorName];
+            var cell = { x: pos.x + vector.x, y: pos.y + vector.y };
+            var other = this.getCellAt(cell);
+            if (other && other.value === tile.value) {
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    };
+
 
 
     this.prepareTiles = function() {
@@ -220,7 +258,7 @@ angular.module('Grid', [])
       };
       this.setCellAt(oldPos, null);
       this.setCellAt(newPosition, tile);
-      console.log('the new position is: ', newPosition);
+      console.log('the new position is: ', tile, newPosition);
       tile.updatePosition(newPosition);
 
     };
@@ -235,13 +273,7 @@ angular.module('Grid', [])
       this.insertTile(tile);
     };
 
-    this.randomAvailableCell = function() {
-      var cells = this.availableCells();
-      //console.log("the availableCells are: ", cells);
-      if (cells.length > 0) {
-        return cells[Math.floor(Math.random() * cells.length)];
-      }
-    };
+
 
     // Add a tile to the tiles array
     this.insertTile = function(tile) {
@@ -272,4 +304,16 @@ angular.module('Grid', [])
       return (pos.y * service.size) + pos.x;
     };
 
+    this.randomAvailableCell = function() {
+      var cells = this.availableCells();
+      //console.log("the availableCells are: ", cells);
+      if (cells.length > 0) {
+        return cells[Math.floor(Math.random() * cells.length)];
+      }
+    };
+
+    this.anyCellsAvailable = function() {
+      return this.availableCells().length > 0;
+    };
+    return this;
   });

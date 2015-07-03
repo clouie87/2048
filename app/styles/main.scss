@@ -10,7 +10,7 @@ $tile-count: 4;         // The number of tiles per row/column
 $tile-padding: 15px;
 $tile-radius: 3px;
 
-//$game-background: #bbada0;
+$game-background: #bbada0;
 //$game-container-background: #bbada0;
 $colors:  #EEE4DA, // 2
           #EAE0C8, // 4
@@ -71,6 +71,7 @@ html, body {
         height: $tile-size; // set the cell height
         margin-bottom: $tile-padding; // the padding between lower cells
         margin-right: $tile-padding; // the padding between the right cell
+        background: rgba(238, 228, 218, 0.35);
         float: left;
 
 
@@ -89,7 +90,7 @@ html, body {
 //        font-size: 40px;
         color: white;
         text-align: center;
-        background-color: orange;
+//        background-color: orange;
         position: absolute;
 
         line-height: $tile-size;
@@ -112,11 +113,11 @@ html, body {
           }
         }
 
-//        @for $i from 1 through length($colors) {
-//          &.tile-#{power(2, $i)} .tile-inner {
-//            background: nth($colors, $i)
-//          }
-//        }
+        @for $i from 1 through length($colors) {
+          &.tile-#{power(2, $i)} .tile-inner {
+            background: nth($colors, $i)
+          }
+        }
 
       }
     }

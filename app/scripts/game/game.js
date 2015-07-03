@@ -61,13 +61,14 @@ angular.module('Game', ['Grid', 'ngCookies'])
                 var newValue = tile.value * 2;
                 var mergedTile = GridService.newTile(tile, newValue);
                 mergedTile.merged = [tile, cell.next];
+
                 console.log('the merged tile value is: ', newValue);
                 // Insert the new tile
                 GridService.insertTile(mergedTile);
                 // Remove the old tile
                 GridService.removeTile(tile);
                 // Move the location of the mergedTile into the next position
-                GridService.moveTile(mergedTile.merged, next);
+                GridService.moveTile(mergedTile, next);
                 // Update the score of the game
                 self.updateScore(self.currentScore + newValue);
                 // Check for the winning value
@@ -114,7 +115,7 @@ angular.module('Game', ['Grid', 'ngCookies'])
 
 
   this.movesAvailable = function() {
-    //return GridService.anyCellsAvailable() || GridService.tileMatchesAvailable();
+    return GridService.anyCellsAvailable() || GridService.tileMatchesAvailable();
   };
 
 });

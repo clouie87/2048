@@ -8700,7 +8700,30 @@ button.close {
     display: none !important;
   }
 }
-/* line 30, ../../app/styles/main.scss */
+/* line 31, ../../app/styles/main.scss */
+.container {
+  max-width: 600px;
+}
+
+/* line 34, ../../app/styles/main.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #333333;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
+
+/* line 45, ../../app/styles/main.scss */
+#game-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+}
+
+/* line 53, ../../app/styles/main.scss */
 #game {
   position: relative;
   width: 400px;
@@ -8708,7 +8731,7 @@ button.close {
   background-color: #bbada0;
   border-radius: 6px;
 }
-/* line 38, ../../app/styles/main.scss */
+/* line 61, ../../app/styles/main.scss */
 #game .grid-container {
   position: absolute;
   z-index: 1;
@@ -8716,150 +8739,107 @@ button.close {
   width: 400px;
   height: 400px;
 }
-/* line 46, ../../app/styles/main.scss */
+/* line 69, ../../app/styles/main.scss */
 #game .grid-container .grid-cell {
   width: 81.25px;
   height: 81.25px;
   margin-bottom: 15px;
   margin-right: 15px;
+  float: left;
 }
-/* line 56, ../../app/styles/main.scss */
+/* line 79, ../../app/styles/main.scss */
 #game .tile-container {
   position: absolute;
   z-index: 2;
   height: 400px;
   width: 400px;
 }
-/* line 63, ../../app/styles/main.scss */
+/* line 86, ../../app/styles/main.scss */
 #game .tile-container .tile {
   width: 81.25px;
   color: white;
   text-align: center;
+  background-color: orange;
+  position: absolute;
   line-height: 81.25px;
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-0 {
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-1 {
   -webkit-transform: translate(0px, 96.25px);
   transform: translate(0px, 96.25px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-2 {
   -webkit-transform: translate(0px, 192.5px);
   transform: translate(0px, 192.5px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-0-3 {
   -webkit-transform: translate(0px, 288.75px);
   transform: translate(0px, 288.75px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-0 {
   -webkit-transform: translate(96.25px, 0px);
   transform: translate(96.25px, 0px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-1 {
   -webkit-transform: translate(96.25px, 96.25px);
   transform: translate(96.25px, 96.25px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-2 {
   -webkit-transform: translate(96.25px, 192.5px);
   transform: translate(96.25px, 192.5px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-1-3 {
   -webkit-transform: translate(96.25px, 288.75px);
   transform: translate(96.25px, 288.75px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-0 {
   -webkit-transform: translate(192.5px, 0px);
   transform: translate(192.5px, 0px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-1 {
   -webkit-transform: translate(192.5px, 96.25px);
   transform: translate(192.5px, 96.25px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-2 {
   -webkit-transform: translate(192.5px, 192.5px);
   transform: translate(192.5px, 192.5px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-2-3 {
   -webkit-transform: translate(192.5px, 288.75px);
   transform: translate(192.5px, 288.75px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-0 {
   -webkit-transform: translate(288.75px, 0px);
   transform: translate(288.75px, 0px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-1 {
   -webkit-transform: translate(288.75px, 96.25px);
   transform: translate(288.75px, 96.25px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-2 {
   -webkit-transform: translate(288.75px, 192.5px);
   transform: translate(288.75px, 192.5px);
 }
-/* line 83, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 #game .tile-container .tile.position-3-3 {
   -webkit-transform: translate(288.75px, 288.75px);
   transform: translate(288.75px, 288.75px);
 }
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-2 .tile-inner {
-  background: #EEE4DA;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-4 .tile-inner {
-  background: #EAE0C8;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-8 .tile-inner {
-  background: #F59563;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-16 .tile-inner {
-  background: #3399ff;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-32 .tile-inner {
-  background: #ffa333;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-64 .tile-inner {
-  background: #cef030;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-128 .tile-inner {
-  background: #E8D8CE;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-256 .tile-inner {
-  background: #990303;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-512 .tile-inner {
-  background: #6BA5DE;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-1024 .tile-inner {
-  background: #DCAD60;
-}
-/* line 91, ../../app/styles/main.scss */
-#game .tile-container .tile.tile-2048 .tile-inner {
-  background: #B60022;
-}
-
-/*# sourceMappingURL=main.css.map */

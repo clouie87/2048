@@ -27,6 +27,29 @@ $colors:  #EEE4DA, // 2
 
 //@mixin game-board($tile-count: 4) {
   $tile-size: ($width - $tile-padding * ($tile-count + 1)) / $tile-count;
+
+.container {
+  max-width: 600px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+
+  background: #faf8ef;
+  color: $text-color;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
+
+
+#game-container {
+  position: relative;
+  width: $width;
+  height: $width;
+  margin: 40px auto;
+}
+
+
   #game {
     position: relative;
     width: $width;
@@ -48,6 +71,8 @@ $colors:  #EEE4DA, // 2
         height: $tile-size; // set the cell height
         margin-bottom: $tile-padding; // the padding between lower cells
         margin-right: $tile-padding; // the padding between the right cell
+        float: left;
+
 
       }
     }
@@ -64,6 +89,8 @@ $colors:  #EEE4DA, // 2
 //        font-size: 40px;
         color: white;
         text-align: center;
+        background-color: orange;
+        position: absolute;
 
         line-height: $tile-size;
 //        @include border-radius($tile-radius);
@@ -85,11 +112,11 @@ $colors:  #EEE4DA, // 2
           }
         }
 
-        @for $i from 1 through length($colors) {
-          &.tile-#{power(2, $i)} .tile-inner {
-            background: nth($colors, $i)
-          }
-        }
+//        @for $i from 1 through length($colors) {
+//          &.tile-#{power(2, $i)} .tile-inner {
+//            background: nth($colors, $i)
+//          }
+//        }
 
       }
     }
